@@ -121,23 +121,25 @@ impl UUID {
 
 #[test]
 fn test() {
-    let encode = UUID::uuid_string(21321);
-    let cus = UUID::decode(encode.clone());
-    println!("{} - {} - {}", 100, encode, cus);
+    for i in 23424..23524 {
+        let encode = UUID::uuid_string(i);
+        let cus = UUID::decode(encode.clone());
+        println!("自定义数字：{} - uuid:{} - 解码：{}", i, encode, cus);
+    }
 }
-#[test]
-fn test_php() {
-    println!("{}", UUID::decode("ZFycveL0AAoACuKu".to_owned()));
-}
+// #[test]
+// fn test_php() {
+//     println!("{}", UUID::decode("ZFycveL0AAoACuKu".to_owned()));
+// }
 
-#[test]
-fn test_1() {
-    let rand: u16 = 7533;
-    // let (secs, mils) = UUID::time_calculation();
+// #[test]
+// fn test_1() {
+//     let rand: u16 = 7533;
+//     // let (secs, mils) = UUID::time_calculation();
 
-    let p1 = (1683788464 as u64) << 32 | (rand as u64) << 16 | (769 as u64);
+//     let p1 = (1683788464 as u64) << 32 | (rand as u64) << 16 | (769 as u64);
 
-    let custom_xor = 100.bitxor(((769 as u32) << 16 | rand as u32) as u32);
+//     let custom_xor = 100.bitxor(((769 as u32) << 16 | rand as u32) as u32);
 
-    println!("{:?}", p1.to_be_bytes());
-}
+//     println!("{:?}", p1.to_be_bytes());
+// }
