@@ -1,5 +1,5 @@
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
-use simple_unsafe_uuid::UUID;
+use UUID_extend::UUID;
 
 fn encode(i: u32) {
     UUID::uuid_string(i);

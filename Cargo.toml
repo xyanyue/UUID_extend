@@ -1,6 +1,10 @@
 [package]
+authors = ["JN.X <xyanyue@gmail.com>"]
+description = "Extension of uuid generation based on snowflake algorithm and implementation of ID to string conversion"
 edition = "2021"
-name = "simple_unsafe_uuid"
+keywords = ["uuid", "id2str", "SnowFlake"]
+license = "BSD-3-Clause"
+name = "UUID_extend"
 version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
