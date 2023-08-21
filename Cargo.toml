@@ -5,6 +5,8 @@ edition = "2021"
 keywords = ["uuid", "id2str", "SnowFlake"]
 license = "BSD-3-Clause"
 name = "UUID_extend"
+repository = "https://github.com/xyanyue/UUID_extend"
+
 version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

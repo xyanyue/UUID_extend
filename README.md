@@ -13,7 +13,7 @@
 
  返回String类型，会将高低位合并，然后使用 NO_PAD 和 URL安全的base64编码
  
- 参考 雪花算法
+ 参考 雪花算法 
  
  ## Rust Bench
 > `Encode: encode      time:   [min:355.38 ns avg:358.24 ns max:361.84 ns]`
