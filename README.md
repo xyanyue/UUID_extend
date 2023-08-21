@@ -16,11 +16,11 @@
  参考 雪花算法
 
 ## Rust Bench
+```bash
+Encode: encode      time:   [min:355.38 ns avg:358.24 ns max:361.84 ns]
 
-> `Encode: encode      time:   [min:355.38 ns avg:358.24 ns max:361.84 ns]`
->
-> `Decode: decode      time:   [min:214.15 ns avg:217.19 ns max:220.71 ns]`
-
+Decode: decode      time:   [min:214.15 ns avg:217.19 ns max:220.71 ns]
+```
 ## Example
 
 ---
@@ -48,8 +48,9 @@
 ```
 
 #### PHP 版本 。源码：php/lib.php
+> https://github.com/xyanyue/UUID_extend
 
-【https://github.com/xyanyue/UUID_extend】
+
 
 ```php
  $uuid = new UUID();
@@ -62,7 +63,7 @@
 
 ## 样例
 
-```
+```bash
 自定义数字：23424 - uuid:ZFyqoU5IAgUCBRXI - 解码：23424
 自定义数字：23425 - uuid:ZFyqoQPtAgUCBVhs - 解码：23425
 自定义数字：23426 - uuid:ZFyqoSmEAgUCBXIG - 解码：23426
