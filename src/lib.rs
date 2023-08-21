@@ -21,7 +21,7 @@
 //!     }
 //! ```
 //! #### Encode Decode Int
-//! //! ```no run
+//! ```no run
 //! for i in 0..100 {
 //!     let encode = UUID::uuid(i);
 //!     let decode = UUID::decode_int(encode);
@@ -30,6 +30,7 @@
 //! }
 //! ```
 //! #### PHP 版本 。源码：php/lib.php
+//! 【https://github.com/xyanyue/UUID_extend】
 //! ```no run
 //! $uuid = new UUID();
 //! for ($i = 0; $i < 100; $i++) {
@@ -112,6 +113,7 @@ impl UUID {
 
         encode.1.bitxor(((mils as u32) << 16 | rand as u32) as u32)
     }
+    // 随机数生成算法
     // fn _random(&mut self) -> u16 {
     //     let seed = (75 * R.load(Ordering::Relaxed) + 74) % 2 ^ 16 + 1;
     //     R.store(seed, Ordering::Relaxed);
