@@ -1,6 +1,6 @@
  生成全局UUID.扩展的雪花算法。可自定义存储u32数字，使用decode可解码出自定义数字
 
- *注意：使用大端存储* 
+ *注意：使用大端存储*
 
 > 作为UUID生成器，自定义数字可使用 机房+服务器等作为编码
 
@@ -48,6 +48,8 @@
 ```
 
 #### PHP 版本 。源码：php/lib.php
+
+【https://github.com/xyanyue/UUID_extend】
 
 ```php
  $uuid = new UUID();
