@@ -1,19 +1,25 @@
- 生成全局UUID.扩展的雪花算法。可自定义存储u32数字，使用decode可解码出自定义数字
+## 简介
+> 生成全局UUID.扩展的雪花算法。可自定义存储u32数字，使用decode可解码出自定义数字
+> 
+> *注意：使用大端存储*
 
- *注意：使用大端存储*
+#### 适用类型
+1. 作为UUID生成器，自定义数字可使用 机房+服务器等作为编码
 
-> 作为UUID生成器，自定义数字可使用 机房+服务器等作为编码
+2. 作为ID转换器，自定义数字为数据库ID
 
-> 作为ID转换器，自定义数字为数据库ID
-
- 若返回int型 `UUID::uuid(u32)`：会返回高位u64 和低位u32 俩个数字.
- 高位存储时间戳和随机数，低位存储加密的自定义数字.
+#### INT返回
+> 若返回int型 `UUID::uuid(u32)`：会返回高位u64 和低位u32 俩个数字.
+> 
+> 高位存储时间戳和随机数，低位存储加密的自定义数字.
 
 > PHP版本 `new UUID()->uuid(int)`返回的是两个pack大端编码的字节数组
 
- 返回String类型，会将高低位合并，然后使用 NO_PAD 和 URL安全的base64编码
+#### String 返回
+> 返回String类型，会将高低位合并，然后使用 NO_PAD 和 URL安全的base64编码
 
- 参考 雪花算法
+
+> 参考 雪花算法
 
 ## Rust Bench
 ```bash
@@ -22,9 +28,6 @@ Encode: encode      time:   [min:355.38 ns avg:358.24 ns max:361.84 ns]
 Decode: decode      time:   [min:214.15 ns avg:217.19 ns max:220.71 ns]
 ```
 ## Example
-
----
-
 #### Encode Decode String
 
 ```rust
@@ -48,9 +51,7 @@ Decode: decode      time:   [min:214.15 ns avg:217.19 ns max:220.71 ns]
 ```
 
 #### PHP 版本 。源码：php/lib.php
-> https://github.com/xyanyue/UUID_extend
-
-
+> 查看`https://github.com/xyanyue/UUID_extend`
 
 ```php
  $uuid = new UUID();
