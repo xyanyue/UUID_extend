@@ -50,6 +50,11 @@ Decode: decode      time:   [min:214.15 ns avg:217.19 ns max:220.71 ns]
  }
 ```
 
+#### decode_full
+```rust
+let (custom,secs,mils,rand) = UUID::decode_int(encode);
+```
+
 #### PHP 版本 。源码：php/lib.php
 > 查看`https://github.com/xyanyue/UUID_extend`
 
