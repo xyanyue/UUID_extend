@@ -106,6 +106,20 @@ impl UUID {
         // println!("rand:{} mils:{} custom_xor:{}", rand, mils, custom_xor);
         custom_xor.bitxor(((mils as u32) << 16 | rand as u32) as u32)
     }
+    // 解码所有组成 cus, secs, mils, rand
+    pub fn decode_full(encode: String) -> (u32, u32, u16, u16) {
+        let b = general_purpose::URL_SAFE_NO_PAD.decode(encode).unwrap();
+        // println!("[u8]{:?}", b);
+        let mils = ((b[6] as u16) << 8) | b[7] as u16;
+        let rand = ((b[4] as u16) << 8) | b[5] as u16;
+        let secs =
+            ((b[0] as u32) << 24) | ((b[1] as u32) << 16) | ((b[2] as u32) << 8) | b[3] as u32;
+        let custom_xor =
+            ((b[8] as u32) << 24) | ((b[9] as u32) << 16) | ((b[10] as u32) << 8) | b[11] as u32;
+        // println!("rand:{} mils:{} custom_xor:{}", rand, mils, custom_xor);
+        let cus = custom_xor.bitxor(((mils as u32) << 16 | rand as u32) as u32);
+        (cus, secs, mils, rand)
+    }
 
     pub fn decode_int(encode: (u64, u32)) -> u32 {
         let rand = ((encode.0 & 0x00000000ffff0000) >> 16) as u16;
